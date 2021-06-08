@@ -1,0 +1,33 @@
+@use '../src/scss/abstracts/reset'as *;
+@use '../src/scss/abstracts/base'as *;
+
+@use '../src/scss/abstracts/index'as *;
+
+#root{
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 93.05vw;
+}
+
+.Hidden{
+    visibility: hidden;
+}
+
+.Visible{
+    visibility: visible;
+}
+
+
+// .MoveTo{
+//     animation: $LetterMove 3s $ease-material;
+// }
+
+@keyframes ToScaleTransition{
+    100%{
+        border-radius: 50%;
+        display: none;
+        transform: scale(0);
+    }
+}

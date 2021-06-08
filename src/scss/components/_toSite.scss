@@ -1,0 +1,50 @@
+@use '../abstracts/variables'as *;
+@use '../mixins/col'as *;
+
+.toSite {
+    &_col {
+        @extend .col-3, 
+        .col-sm-2,
+        .col-md-2,
+        .col-lg-2,
+        .col-xl-1,
+        .col-xxl-1;
+        margin-bottom: 25px;
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 15px;
+        border-radius: 50%;
+        width: 100%;
+        border: 2px solid $C_E84E32;
+        transform: rotate(45deg);
+        transition: all .3s $ease-material;
+
+
+        p {
+            font-family: $popins_bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: clamp(1.3rem, 1.389vw, 2rem);
+            transform: translateY(-5px);
+        }
+
+        svg {
+            width: clamp(50px, 4.167vw, 60px);
+            transform: translateY(-5px);
+            margin-bottom: 10px;
+            fill: $C_E84E32;
+        }
+
+        &:hover {
+            background-color: $C_E84E32;
+            p {color: $Bg}
+            svg {fill: $Bg}
+        }
+    }
+
+}

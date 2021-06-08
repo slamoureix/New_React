@@ -1,0 +1,5 @@
+@mixin filet($w : null, $h: null, $bg : null) {
+    width: $w;
+    height: $h;
+    background-color: $bg;
+}

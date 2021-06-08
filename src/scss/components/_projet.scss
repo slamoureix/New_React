@@ -1,0 +1,139 @@
+@use '../abstracts/variables'as*;
+@use '../mixins/col'as *;
+@use '../mixins/separation'as*;
+
+
+
+
+/* 
+Pour gerer l'order des différentes div il est nécessaire d'utiliser la proprieté : order.
+Possibilité de donner une taille au contenur (&__item-(numero)) et à l'image différente (img). 
+*/
+[class*="__project_container"] {
+    width: calc(100% - #{$col-left} - #{$col-right});
+    margin: 75px $col-left 25px;
+}
+
+// posibilité d'ajout flex-items pour controler l'alignement dans la hauteur //
+[class*=_row] {
+    @extend .row;
+}
+
+[class*=head_row] {
+    align-items: baseline;
+
+    .title {
+        @extend .col-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-4,
+        .col-xl-3,
+        .col-xxl-3;
+
+        h1 {
+            font-family: $popins_black;
+            font-size: 50px;
+            padding: 5px 0;
+        }
+    }
+
+    .year {
+        @extend .col-3,
+        .col-offset-3,
+        .col-sm-2,
+        .col-sm-offset-4,
+        .col-md-2,
+        .col-md-offset-4,
+        .col-lg-offset-1,
+        .col-lg-1,
+        .col-xl-1,
+        .col-xl-offset-2,
+        .col-xxl-1,
+        .col-xxl-offset-2;
+        text-align: right;
+        font-family: $popins_regular;
+        font-size: 15px;
+        color: $C_71816D;
+        border-bottom: 2px solid $C_71816D;
+    }
+}
+
+[class*=__images_row] {
+    margin-top: 50px;
+}
+
+[class*="__type"] {
+    @extend .col-3,
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2,
+    .col-xl-2,
+    .col-xxl-2;
+    margin-bottom: 50px;
+
+    p {
+        color: $C_71816D;
+        font-size: 15px;
+    }
+
+    text-align: right;
+    text-transform: uppercase;
+
+}
+
+[class*=__content] {
+    @extend .col-6,
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-4,
+    .col-lg-offset-2,
+    .col-xl-3,
+    .col-xl-offset-3,
+    .col-xxl-3,
+    .col-xxl-offset-3;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+    p {
+        color: $C_E84E32;
+        font-size: 25px;
+        line-height: 1.25;
+    }
+}
+
+[class*=__item-] {
+    @extend .col-xxl-6,
+    .col-xl-6,
+    .col-lg-6,
+    .col-md-6,
+    .col-xs-6;
+    margin-bottom: clamp(2.5rem, 5.208vw, 7.5rem);
+}
+
+
+
+[class*="__grid"] {
+    @extend .row;
+    margin-bottom: 25px;
+}
+
+[class*="__preview"] {
+    @extend .col-3,
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2,
+    .col-xl-2,
+    .col-xxl-1,
+    .col-xxl-offset-1;
+}
+
+[class*=__links_container] {
+    display: flex;
+    flex-direction: column;
+
+    .separation {
+        @include Separation($Color : $C_71816D);
+    }
+}

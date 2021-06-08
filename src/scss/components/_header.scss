@@ -1,0 +1,63 @@
+@use '../abstracts/variables' as *;
+
+@use '../mixins/breakpoints' as *;
+@use '../mixins/display' as *;
+
+.header{
+    @include display($justify : space-between, $align : flex-start);
+    flex-wrap: wrap;
+    margin-top: clamp(2.5rem, 2.778vw, 4rem);
+    
+    /* header in size 1024px à ne pas mettre en flex-wrap*/
+    // @include media-breakpoint-between(lg, xl){
+    //     flex-wrap: nowrap;
+    // }
+
+    nav {
+        font-family: $popins_regular;
+        font-size: clamp(1.5rem, 1.389vw, 2rem);
+        width: 50%;
+        display: inherit;
+        justify-content: flex-end;
+
+        ul {
+            flex-direction: column;
+            display: inherit;
+
+            li {
+                margin-bottom: 1.2rem;
+                text-align: right;
+            }
+        }
+        
+        @include media-breakpoint-down(md){
+            margin-top: 25px;
+            width: 100%;
+        }
+            
+
+        //min-width : 1280px
+        @include media-breakpoint-up(xl) {
+            width: $col-right;
+            
+        }
+
+    }
+}
+.link__home{
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.animate{
+    animation: little_move .1s $ease-material forwards;
+}
+
+
+@keyframes little_move {
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+

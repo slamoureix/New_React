@@ -1,0 +1,13 @@
+@use '../../mixins/col'as *;
+
+// [class*=Edition__item]{
+//     @extend .col-6, .col-sm-6, .col-lg-6, .col-md-3, .col-xl-3 ,.col-xxl-3;
+// }
+// .Edition__item-1{
+//     @extend .col-6,
+//     .col-sm-6,
+//     .col-lg-6,
+//     .col-md-3,
+//     .col-xl-3,
+//     .col-xxl-6;
+// }

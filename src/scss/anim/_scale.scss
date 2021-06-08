@@ -1,0 +1,36 @@
+
+
+$Scale : RotateScale;
+
+@keyframes RotateScale {
+    0% {
+        
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+
+    25% {
+        
+        transform: translate(-50%, -50%) scale(0.5) rotate(90deg);
+    }
+
+    50% {
+        
+        transform: translate(-50%, -50%) scale(2.5) rotate(180deg);
+    }
+
+    75% {
+        
+        transform: translate(-50%, -50%) scale(0.5) rotate(90deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0) rotate(360deg);
+    }
+}
+
+
+@mixin parallax {
+    transform: translate3d(0px, 129px, 0px) scale(1.4);
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0, 0, 0, 1) 0s
+}

@@ -1,0 +1,47 @@
+@use '../abstracts/variables' as *;
+
+@use '../mixins/breakpoints' as *;
+
+@use '../components/filets'as*;
+@use '../abstracts/extend'as*;
+
+
+
+.legals {
+    @extend .height-content;
+    text-align: left;
+    margin: 0 auto;
+    width: 50%;
+
+    // min-width: 0 to max-width: 1279,98 ;
+    @include media-breakpoint-between(xs, md) {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h1, h2{
+        font-size: 40px;
+    }
+
+    h2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    strong {
+        display: inline-block;
+        margin: 5px 0px;
+        padding: 5px 5px 5px 0px;
+        font-family: $popins_bold;
+        color: $Bg;
+        background-color: $C_E84E32;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    &_filet {
+        display: block;
+        margin: 5px 0;
+        @include filet(1rem, 1rem, $C_E84E32);
+    }
+}

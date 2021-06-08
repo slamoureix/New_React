@@ -1,0 +1,56 @@
+@use '../abstracts/variables'as *;
+
+.error404 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0;
+    height: 100%;
+
+    .box_404 {
+        display: inherit;
+        width: 40%;
+        justify-content: space-between;
+
+        .svg_box {
+            width: 15%;
+        }
+
+        .svg_box:nth-of-type(1),
+        .svg_box:nth-of-type(2),
+        .svg_box:nth-of-type(3) {
+            fill: $C_E84E32;
+        }
+
+        .svg_box:nth-of-type(1),
+        .svg_box:nth-of-type(3) {
+
+            line,
+            polyline {
+                stroke: $C_E84E32;
+                fill: none;
+                stroke-miterlimit: 10;
+            }
+        }
+    }
+
+    .content {
+        display: inherit;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+
+        p {
+            text-align: center;
+            font-size: 4rem;
+            line-height: 4.2rem;
+        }
+
+        p:nth-of-type(1) {
+            font-family: $popins--italic;
+            margin-bottom: 15px;
+        }
+    }
+}

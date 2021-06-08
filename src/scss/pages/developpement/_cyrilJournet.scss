@@ -1,0 +1,20 @@
+@use "../../mixins/col"as *;
+
+
+.CyrilJournet__images_row{
+
+    .CyrilJournet__item-{
+        &3,
+        &2 {
+            @extend .col-xxl-3,
+            .col-xl-3,
+            .col-lg-6,
+            .col-md-6,
+            .col-xs-6;
+            
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}

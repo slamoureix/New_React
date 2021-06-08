@@ -1,0 +1,76 @@
+@use '../abstracts/variables'as *;
+@use '../components/filets'as *;
+
+.me {
+    margin: clamp(4.5rem, 6.25vw, 9rem) auto;
+    visibility: hidden;
+
+    &_content {
+        max-width: 90%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    img {
+        position: absolute;
+        mix-blend-mode: darken;
+        width: 25vw;
+        height: 40vw;
+
+
+        top: 0;
+        right: 0;
+        border-bottom-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+
+    .presentation {
+        padding: 5px;
+        font-size: clamp(3rem, 6.250vw, 9rem);
+        line-height: 1.15; // facteur de multiplication de la police.
+
+        strong {
+            color: $C_461108;
+            font-family: $popins_bold;
+        }
+
+        span {
+            background-color: $C_461108;
+            padding: 5px 7px;
+
+            strong {
+                color: $Bg;
+            }
+        }
+
+        .date {
+            mix-blend-mode: hard-light;
+            color: $Bg;
+            display: inline-block;
+            width: auto;
+            background-color: $C_E84E32;
+            padding: 0 7.5px;
+        }
+    }
+
+    .competence {
+        width: 85%;
+        font-size: clamp(2rem, 3.472vw, 5rem);
+        padding: 5px;
+        line-height: 1.15;
+        margin-bottom: 15px;
+        transform: translateX(clamp(50px, 6.944vw, 100px));
+
+        span {
+            display: block;
+            margin: clamp(5px, 3.472vw, 10px) 0;
+            @include filet(1rem, clamp(15px, 6.944vw, 50px), $C_E84E32);
+        }
+    }
+
+    .separate {
+        display: block;
+        margin: clamp(10px, 3.472vw, 30px) 0;
+        @include filet(clamp(50px, 6.944vw, 100px), 1rem, $C_461108);
+    }
+}

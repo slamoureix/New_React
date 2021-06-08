@@ -1,0 +1,16 @@
+$PathMove : PathMove;
+
+@keyframes PathMove {
+    0% {
+        opacity: 0;
+        translate: -250px -250px;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        translate: -9.9px -10.38px;
+    }
+}

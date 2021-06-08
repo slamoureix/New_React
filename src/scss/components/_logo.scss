@@ -1,0 +1,63 @@
+@use '../abstracts/variables' as *;
+
+@use '../mixins/display' as *;
+@use '../mixins/breakpoints' as *;
+
+@use '../anim/scale' as *;
+@use '../anim/path_move' as *;
+
+
+.box_logo{
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        width: $col-left;
+    }
+
+    .content_logo{
+        @include display();
+        flex-direction: column;
+    }
+    
+
+    svg {
+        transform: rotate(-45deg);
+        height: 9rem;
+        width: 9rem;
+        fill: $C_E84E32;
+        margin-bottom: 30px;
+    }
+
+    path {
+        animation: $PathMove .9s ease-in-out .35s;
+    }
+
+    polygon {
+        animation: $Scale .9s ease-in-out .25s;
+    }
+
+    polygon:nth-of-type(1) {
+        animation-delay: 0.1s;
+    }
+
+    polygon:nth-of-type(2) {
+        animation-delay: 0.2s;
+    }
+
+    polygon:nth-of-type(3) {
+        animation-delay: 0.3s;
+    }
+
+    .name {
+        text-transform: uppercase;
+        text-align: center;
+        h1{
+            font-size: 2rem;
+        }
+        
+        @include media-breakpoint-down(lg) {
+            margin-top: 15px;
+        }
+    }
+}
+

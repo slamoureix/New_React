@@ -1,0 +1,14 @@
+@use '../abstracts/variables'as *;
+@use '../components/filets'as*;
+
+@mixin Separation($m_min : 10px,
+    $m_middle : 3.472vw,
+    $m_max : 50px,
+    $f_min : 50px,
+    $f_middle : 6.944vw,
+    $f_max : 100px,
+    $f_height : 1rem,
+    $Color : $C_461108) {
+    margin: clamp(#{$m_min}, #{$m_middle}, #{$m_max}) 0;
+    @include filet(clamp(#{$f_min}, #{$f_middle}, #{$f_max}), #{$f_height}, #{$Color});
+}

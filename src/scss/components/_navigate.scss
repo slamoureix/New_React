@@ -1,0 +1,61 @@
+@use '../abstracts/variables'as *;
+@use '../anim/rotate'as *;
+@use '../mixins/breakpoints'as *;
+
+.arrow {
+    fill: $C_E84E32;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+        animation: $rotate .5s ease-in-out forwards;
+    }
+}
+
+[class*="__navigation"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 4px solid $C_E84E32;
+    padding: clamp(17.5px, 1.736vw, 25px) 0 10px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    @include media-breakpoint-up(xl) {
+        width: 45%;
+    }
+
+    a {
+        display: inherit;
+        align-items: center;
+
+        p {
+            font-size: 2rem;
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .next,
+    .last {
+        padding: 15px;
+
+        &:hover {
+            .arrow {
+                animation: $rotate .5s ease-in-out forwards;
+            }
+
+            p {
+                transform-origin: left;
+                padding-bottom: 10px;
+                border-bottom: 4px solid $C_E84E32;
+            }
+        }
+    }
+}

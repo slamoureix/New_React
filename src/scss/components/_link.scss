@@ -1,0 +1,49 @@
+@use '../abstracts/variables'as *;
+
+.link {
+    position: relative;
+    animation-delay: .2s;
+
+    &__current {
+
+        transform-origin: right;
+        border-bottom: 4px solid $C_E84E32;
+        transition: all .2s $ease-material;
+    }
+}
+
+.link::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    right: -50%;
+    background-color: $C_E84E32;
+    transform: scaleX(0);
+}
+
+.link:hover::after {
+    z-index: 5;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform .3s $ease-material;
+}
+
+.link__underProject_name {
+    font-family: $popins_bold;
+    text-transform: uppercase;
+    color: $C_E84E32;
+    font-size: clamp(10rem, 10.361vw, 20rem);
+
+    .link__underProject {
+
+        &:hover {
+            opacity: 0.85;
+            color: $C_742719;
+            background-color: $C_E84E32;
+            mix-blend-mode: difference;
+            transition: all .5s $ease-material;
+        }
+    }
+
+}

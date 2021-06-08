@@ -1,0 +1,58 @@
+@use '../abstracts/variables'as *;
+@use '../mixins/col'as *;
+@use '../mixins/separation'as *;
+
+
+[class*= skills_row ] {
+    margin-bottom: 25px;
+
+    .title {
+        @extend .col-6,
+        .col-sm-2,
+        .col-md-2,
+        .col-lg-1,
+        .col-xl-1,
+        .col-xxl-1,
+        .col-lg-offset-2,
+        .col-xl-offset-2,
+        .col-xxl-offset-3;
+
+        font-family: $popins_bold;
+        color: $C_461108;
+        font-size: 15px;
+        border-bottom: 2px solid $C_742719;
+    }
+
+    ul {
+        @extend .col-6,
+        .col-sm-4,
+        .col-md-4,
+        .col-lg-3,
+        .col-xl-3,
+        .col-xxl-2;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        font-family: $popins_regular;
+        color: $C_461108;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+
+        span {
+            display: block;
+            @include Separation(0px, 0px, 0px, 5px, 5px, 5px, 5px);
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+    }
+
+    li:last-child {
+        span {
+            display: none;
+        }
+    }
+}

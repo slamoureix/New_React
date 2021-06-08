@@ -1,0 +1,19 @@
+@use '../abstracts/variables'as *;
+
+.button_home {
+    cursor: pointer;
+    font-size: 2rem;
+    font-family: $popins_regular;
+    padding: 0px 25px;
+    border-bottom: 4px solid $C_E84E32;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        transform-origin: left;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-left: 4px solid $C_E84E32;
+        border-right: 4px solid $C_E84E32;
+
+    }
+}

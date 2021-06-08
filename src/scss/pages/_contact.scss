@@ -1,0 +1,25 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/extend'as*;
+
+$EcartToRight: 15vw;
+
+.Contact {
+    @extend .height-content;
+    display: flex;
+    align-items: center;
+
+    &_content {
+        width: calc(100% - #{$EcartToRight});
+        transform: translateX(#{$EcartToRight});
+        font-family: $popins_black;
+        font-size: clamp(3rem, 5.556vw, 8rem);
+        line-height: clamp(4.5rem, 4.167vw, 6rem);
+
+        span {
+            position: relative;
+            font-family: $popins_bold;
+            font-size: clamp(1.9rem, 2.778vw, 4rem);
+            line-height: 1.5rem;
+        }
+    }
+}

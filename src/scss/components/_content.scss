@@ -1,0 +1,199 @@
+@use '../abstracts/variables'as *;
+@use '../mixins/col'as *;
+@use '../mixins/breakpoints'as *;
+
+$coeff: 10vw; // 13 rem // 9.028vw
+$numOfelement : 5;
+
+#projet {
+    header {
+        margin-bottom: clamp(15px, 5.208vw, 75px);
+        border-top: 4px solid $C_E84E32;
+
+        h1 {
+            font-family: $popins_black;
+            text-transform: uppercase;
+            color: $C_E84E32;
+            font-size: clamp(5rem, 10.417vw, 15rem);
+        }
+    }
+
+    border-bottom: 4px solid $C_E84E32;
+    margin-bottom: 50px;
+}
+
+[class*="__category_container"] {
+    width: 90%;
+    margin: 0 auto 50px;
+}
+
+[class*='__category_presentation'] {
+    @extend .col-6,
+    .col-sm-3,
+    .col-sm-offset-2,
+    .col-md-3,
+    .col-md-offset-2,
+    .col-lg-2,
+    .col-lg-offset-3,
+    .col-xl-2,
+    .col-xl-offset-3,
+    .col-xxl-2,
+    .col-xxl-offset-3;
+    padding-left: 0;
+    border-bottom: 10px solid $C_E84E32;
+
+
+    h1 {
+        font-family: $popins_regular;
+        font-size: 35px;
+        padding: 5px 0;
+        text-align: right;
+    }
+}
+
+
+.project_container {
+    height: clamp(20rem, 24.306vw, 35rem);
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+        width: 95%;
+        height: auto;
+        margin: 10px auto;
+    }
+}
+
+// .project agit sur la UL
+.links_project {
+
+    // agit sur la li .link__project{}
+
+    .link__project_name {
+        font-size: clamp(2rem, 3.125vw, 4rem);
+        font-family: $popins_bold;
+        line-height: 100%;
+    }
+
+    .link__project_cover {
+        img {
+            display: none;
+        }
+    }
+
+
+    // Responsive //
+    @include media-breakpoint-down(lg) {
+        .link__project {
+            margin-bottom: 10px;
+        }
+    }
+
+
+    // pour les écrans supérieurs à 1024
+    @include media-breakpoint-up(lg) {
+        .link__project {
+            position: absolute;
+            top: 85%;
+            transform-origin: top left;
+            // transform: rotate(-30deg);
+            transform: translateX(-#{$coeff}) rotate(-30deg);
+        }
+
+        @for $i from 1 through $numOfelement {
+            .link__project:nth-of-type(#{$i}) {
+                left: calc(#{$coeff} * #{$i});
+            }
+        }
+
+        .link__project_box {
+            padding: .52vw 0 1.05vw 1.05vw; // padding: 10px 0px 20px 20px;
+        }
+
+        .link__project_name {
+            display: inline;
+            height: 100%;
+        }
+
+        // classe ajoutée sur les liens inactifs
+        .blur {
+            opacity: .5;
+            transition: all .8s $ease-material;
+        }
+
+        // classe ajoutée que la souris entre sur la box
+        .link__project_box--hover {
+            position: relative;
+            transition: all .5s ease-in-out;
+
+            .link__project_name {
+                font-size: clamp(2rem, 3.125vw, 3rem);
+                font-family: $popins--italic;
+                display: block;
+                transform: translateX((calc(25vw - #{$coeff}))); //20vw
+                padding: 1.05vw .52vw 1.05vw 3.13vw; // padding: 20px 10px 20px 60px;
+                transition: all .5s $ease-material;
+            }
+
+            .link__project_cover {
+                position: absolute;
+                left: 0;
+                top: -11vw;
+                width: 18vw;
+                height: 18vw;
+                background-color: $Bg;
+                
+                img {
+                    display: block;
+                    position: relative;
+                    object-fit: contain;
+                    
+                }
+            }
+        }
+
+        // agit au hover des liens
+        a:hover>.link__project_cover {
+            &::before {
+                content: '';
+                background-color: $C_E84E32;
+                position: absolute;
+                width: 1vw;
+                height: 1vw;
+                border-radius: 50%;
+                top: calc(50% - 0.5vw);
+                left: calc(50% - 0.5vw);
+                z-index: 999999;
+                transition: all .6s $ease-material;
+            }
+        }
+
+        a:hover>.link__project_cover:hover::before {
+            mix-blend-mode: color-dodge; // multiply // color-dodge
+            opacity: 1;
+            border-radius: 0%;
+            transform: scale(19);
+        }
+
+        // a:hover>.link__project_cover:hover {
+        //     img {
+        //         mix-blend-mode: exclusion;
+        //         transition: all .3s ease-in-out .3s;
+        //     }
+        // }
+
+        //  ~ permet d'agir sur des classes css de même niveau dans l'arbre.
+        // permet de virer l'opacité du before sur la cover
+        .link__project_name:hover~.link__project_cover::before {
+            opacity: 0;
+        }
+
+
+    }
+
+    // pour les écrans supérieurs à 1441
+    @include media-breakpoint-up(xxl) {
+        .link__project_name {
+            font-size: clamp(2rem, 3.125vw, 5rem);
+        }
+    }
+}

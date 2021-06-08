@@ -1,0 +1,93 @@
+@use '../abstracts/variables'as *;
+@use './breakpoints'as *;
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(#{$gutter} / -2);
+    margin-left: calc(#{$gutter} / -2);
+    align-items: flex-start;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+@mixin col($i) {
+    flex: 0 0 auto;
+    width: percentage($i / $columns); 
+    max-width: 100%;
+    padding-right: calc(#{$gutter} / 2);
+    padding-left: calc(#{$gutter} / 2);
+        
+}
+
+@mixin offset($i) {
+    margin-left: percentage($i / $columns);
+    @if($i == 0){
+        margin-left: 0
+    }
+}
+
+
+
+@mixin createCol($bk) {
+    @if $bk==xs {
+        @include media-breakpoint-only($bk) {
+        @for $i from 1 through $columns {
+            .col-#{$i} {
+                @include col($i);
+                @if $i==$columns {
+                    padding: 0;
+                }
+            }
+
+            .col-offset-#{$i} {
+                @include offset($i)
+            }
+        }
+        }
+    }
+    @if $bk==xxl {
+        @include media-breakpoint-up($bk) {
+            @for $i from 0 through $columns {
+                .col-#{$bk}-#{$i} {
+                    @include col($i);
+                }
+
+                .col-#{$bk}-offset-#{$i} {
+                    @include offset($i);
+                }
+            }
+        }
+
+    }
+    @else {
+        @include media-breakpoint-only($bk) {
+            @for $i from 0 through $columns {
+                .col-#{$bk}-#{$i} {
+                    @include col($i);
+                    @if $i==$columns {
+                        padding: 0;
+                    }
+                }
+
+                .col-#{$bk}-offset-#{$i} {
+                    @include offset($i);
+                }
+            }
+        }
+    }
+}
+
+@each $bk in map-keys($grid-breakpoints) {
+    @include createCol($bk);
+}

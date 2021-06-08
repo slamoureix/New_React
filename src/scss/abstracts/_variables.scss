@@ -1,0 +1,46 @@
+/* fonts */
+$popins_regular : "poppinsregular";
+$popins--italic : "poppinsitalic";
+$popins_bold : "poppinsbold";
+$popins_black : "poppinsblack";
+
+/* colors */
+$C_E84E32 : #E84E32; //Burning Tomato
+$C_71816D : #71816D;
+$C_742719 : #742719;
+$C_461108 :#461108;
+$C_170805 : #170805;
+// $Bg : rgb(255, 255, 255);
+
+
+// $Bg : rgb(255, 218, 185);
+
+// $Bg : rgb(255, 185, 185);
+// $Bg : rgb(207, 185, 185);
+// $Bg : rgb(198, 207, 185);
+$Bg : rgb(185, 207, 204);
+
+
+$col-left : 10%;
+$col-right : 14.5%;
+
+// systeme de col 
+$columns : 6;
+$gutter : clamp(1.2rem, 1.736vw, 2.5rem);
+
+$height-max : 46vh;
+
+/* breakpoints */
+$grid-breakpoints: (xs: 0px,
+    sm: 576px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1281px,
+    xxl: 1441px
+);
+
+
+/* -- Easing -- */
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$ease-material: cubic-bezier(.4, 0, .2, 1);
+$global-ease: $ease-material;
