@@ -12,8 +12,8 @@ export default function Logo() {
     return (
     <div className = "box_logo"> {
         locationState.pathname === '/' ? 
-        <SvgLogo classes={"content_logo"} /> : 
-        <LogoLink classes={"content_logo link"}/> } 
+        <SvgLogo classes={"box_content_logo content_logo"} /> : 
+        <LogoLink classes={"box_content_logo content_logo link"}/> } 
     </div>
     )
 }

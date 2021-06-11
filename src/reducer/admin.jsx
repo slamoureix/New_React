@@ -1,9 +1,9 @@
-import Error from '../pages/404/404';
+import Error from '../pages/404/Error404';
 
 export const AdminRoutes = {
 Admin: {
     Error: {
-        path: '',
+        path: null,
         name: 'Erreur',
         component: Error,
     }

@@ -39,12 +39,12 @@ export const routes = {
     },
 
     Nav: {
-        Comp: {
-            path: '/Competences',
-            name: 'Compétences',
-            component: Competences,
-            target: '_self',
-        },
+        // Comp: {
+        //     path: '/Competences',
+        //     name: 'Compétences',
+        //     component: Competences,
+        //     target: '_self',
+        // },
         Lab: {
             path: 'https://codepen.io/seb_lam',
             name: 'Lab',

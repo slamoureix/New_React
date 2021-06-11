@@ -1,13 +1,8 @@
 import React, { useEffect, useRef} from 'react';
-
-import {
-    gsap
-} from "gsap";
+import {easingMaterial, tl} from '../../scripts/gsap';
 
 /* IMG */
 import src from './photo_CV_5.webp';
-
-const tl = gsap.timeline()
 
 export default function About() {
     const img = useRef(null)
@@ -16,10 +11,23 @@ export default function About() {
     
     useEffect(() => {
         tl.to(me.current, {visibility: "visible", delay: 0, duration: 0 })
-        .from(img.current, { y: 50, opacity: 0, duration: .5, ease: "power5", delay: .1})
-        .from(presentation.current, { x: -50, opacity: 0, duration: .8, ease: "power4", delay: .3})
-        .from(".separate", {opacity: 0, x: -50})
-    }, [])
+        .from(img.current, {
+            y: 50,
+            opacity: 0,
+            duration: .3,
+            ease: easingMaterial,
+            delay: .1
+        })
+        .from(presentation.current, {
+            y: 50,
+            opacity: 0,
+            duration: .8,
+            ease: easingMaterial,
+            delay: .3
+        })
+        .fromTo(".separate", {opacity: 0, scale: 0, x: -250, duration: 1, ease: easingMaterial,},{scale: 1, opacity: 1, rotate: 360, x: 0})
+        
+    },[])
     
 
     return (

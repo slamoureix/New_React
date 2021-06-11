@@ -72,6 +72,7 @@ export const simpleParallax = "SimpleParallax"
 
 
 
+
 /* Export const vs Export Default */
 
 /*
