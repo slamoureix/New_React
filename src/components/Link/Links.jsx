@@ -51,10 +51,13 @@ export default function Links(props) {
         default:
             return (
             <li>
-                <NavLink activeClassName="link__current" className="link" 
+                <NavLink 
+                activeClassName = "link__current"
+                className = "link"
                 target = {props.target}
                 to={props.path}
-                replace >{props.name}</NavLink>
+                replace >{props.name}
+                </NavLink>
             </li>
         );
     }

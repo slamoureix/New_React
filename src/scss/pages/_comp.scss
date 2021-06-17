@@ -1,0 +1,101 @@
+@use '../abstracts/variables'as *;
+@use '../components/filets'as *;
+@use '../mixins/col'as *;
+@use '../mixins/breakpoints'as *;
+
+
+.competence__project_container{
+    .head_row {margin-bottom: 25px;}
+
+    br {margin-bottom: 2rem}
+}
+
+.competence_row{
+    p{
+        font-size: clamp(2rem, 2.778vw, 4rem);
+        line-height: 1.25;
+    }
+
+    @include media-breakpoint-up(xl) {align-items: center;}
+}
+
+.comp{
+    &_contact{
+        @extend .col-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-5,
+        .col-xl-5,
+        .col-xxl-4,
+        .col-lg-offset-1,
+        .col-xl-offset-1,
+        .col-xxl-offset-2;
+
+        br{
+            margin-bottom: 1rem
+        }
+    }
+
+    &_bio{
+        @extend .col-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-6,
+        .col-xl-5,
+        .col-xxl-5,
+        .col-xxl-offset-1;
+        margin-bottom: 50px;
+    }
+
+    &_content{
+        @extend .col-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-6,
+        .col-xl-5,
+        .col-xxl-2;
+    }
+
+    &_boxes{
+        @extend .col-6,
+        .col-sm-6,
+        .col-md-3,
+        .col-lg-3,
+        .col-xl-3,
+        .col-xxl-2;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    
+    &_box{
+        margin-top: 25px;
+        width: 100%;
+
+        @include media-breakpoint-up(xxl){
+            margin-left: 75px;
+        }
+
+        .subtitle {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 10px;
+            border-left: 4px solid;
+
+            li {
+                font-size: 20px;
+                font-family: $popins_regular;
+                line-height: 1.25;
+
+                    span{
+                        font-family: $popins--italic;
+                    }
+            }
+        }
+    }
+}
+
+

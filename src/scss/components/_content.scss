@@ -14,7 +14,7 @@ $numOfelement : 5;
             font-family: $popins_black;
             text-transform: uppercase;
             color: $C_E84E32;
-            font-size: clamp(5rem, 10.417vw, 15rem);
+            font-size: clamp(4.7rem, 10.417vw, 15rem);
         }
     }
 
@@ -52,7 +52,7 @@ $numOfelement : 5;
 }
 
 
-.project_container {
+.category_project_container {
     height: clamp(20rem, 24.306vw, 35rem);
     position: relative;
 

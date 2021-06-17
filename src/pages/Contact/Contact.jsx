@@ -7,7 +7,7 @@ export default function Contact() {
             Et si on discutait de votre projet ?
             <br/>
             <span>
-                c.&#8239;&gt;&#8239;<a className= "link" href = "mailto:lamoureixs@gmail.com">lamoureixs@gmail.com</a>
+                c.&#8239;&gt;&#8239;<a className= "link" href ="mailto:lamoureixs@gmail.com">lamoureixs@gmail.com</a>
             </span>
             </p>
         </div>

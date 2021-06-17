@@ -11,6 +11,10 @@
     width: 93.05vw;
 }
 
+.transitComponent{
+    position: relative;
+}
+
 .Hidden{
     visibility: hidden;
 }
@@ -18,54 +22,6 @@
 .Visible{
     visibility: visible;
 }
-
-/* class spécial transition de page 
-appear: 'my-appear',
-appearActive: 'my-active-appear',
-appearDone: 'my-done-appear',
-enter: 'my-enter',
-enterActive: 'my-active-enter',
-enterDone: 'my-done-enter',
-exit: 'my-exit',
-exitActive: 'my-active-exit',
-exitDone: 'my-done-exit',
-*/
-
-.fade-enter {
-    opacity: 0;
-    z-index: 1;
-}
-
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 250ms ease-in;
-}
-
-.page-enter {
-    opacity: 0;
-    transform: scale(1.1);
-}
-
-.page-enter-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 300ms, transform 300ms;
-}
-
-.page-exit {
-    opacity: 0;
-    transform: scale(1);
-}
-
-.page-exit-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 300ms, transform 300ms;
-}
-
-// .MoveTo{
-//     animation: $LetterMove 3s $ease-material;
-// }
 
 @keyframes ToScaleTransition{
     100%{

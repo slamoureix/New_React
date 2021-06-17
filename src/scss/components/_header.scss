@@ -15,7 +15,7 @@
 
     nav {
         font-family: $popins_regular;
-        font-size: clamp(1.5rem, 1.389vw, 2rem);
+        font-size: 2rem;
         width: 50%;
         display: inherit;
         justify-content: flex-end;
@@ -33,13 +33,14 @@
         @include media-breakpoint-down(md){
             margin-top: 25px;
             width: 100%;
+            justify-content: center;
         }
             
 
         //min-width : 1280px
         @include media-breakpoint-up(xl) {
+            justify-content: flex-end;
             width: $col-right;
-            
         }
 
     }

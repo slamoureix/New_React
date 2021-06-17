@@ -32,7 +32,7 @@ Possibilité de donner une taille au contenur (&__item-(numero)) et à l'image d
 
         h1 {
             font-family: $popins_black;
-            font-size: 50px;
+            font-size: clamp(4rem, 3.47vw , 5rem);
             padding: 5px 0;
         }
     }
@@ -97,7 +97,6 @@ Possibilité de donner une taille au contenur (&__item-(numero)) et à l'image d
 
 
     p {
-        color: $C_E84E32;
         font-size: 25px;
         line-height: 1.25;
     }

@@ -10,7 +10,7 @@ export default function HomeSection({nameProject, routes}) {
             <div className= {`${nameProject.rep}__category_presentation`}>
                 <h1>{nameProject.name}</h1>
             </div>
-            <div id= {nameProject.rep} className= "project_container">
+            <div id= {nameProject.rep} className= "category_project_container">
                 <ul className="links_project"> {useLinksCreate(routes)} </ul>
             </div>
         </section>

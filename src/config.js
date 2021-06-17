@@ -36,11 +36,11 @@ export const comp = "Compétences"
 export const devFrontBack = `Développement Front\u2011End & Back\u2011End`
 export const devFront = `Développement Front\u2011End`
 export const devBack = `Développement Back\u2011End`
-export const integration = "Intégration"
-export const responsive = "Responsive"
+export const integration = "Intégration Web"
+export const responsive = "Responsive Design"
 export const ui = "User interface"
 export const webdesigning = "Webdesign"
-export const branding = "Branding"
+export const branding = "Identité de marque"
 export const animCss = "Animations CSS "
 export const animJavascript = "Animations JS"
 export const animations = "Animations"
@@ -56,6 +56,7 @@ export const sass = "Préprocesseur Sass"
 export const wordpress = "Wordpress"
 export const acf = "Advanced Custom Fields"
 export const cptUi ="Custom Post Type UI"
+export const yoastSeo ="YoastSeo"
 
 export const react = "React js"
 export const jsx = "JSX"
@@ -68,6 +69,21 @@ export const scrollMagic = "ScrollMagic"
 export const simpleParallax = "SimpleParallax"
 
 
+export const indesign= "Indesign"
+export const illustrator= "Illustrator"
+export const photoshop= "Photoshop"
+export const adobeXd= "Adobe XD"
+export const figma= "Figma"
+
+
+/* colors */
+/*
+$C_E84E32: #E84E32; //Burning Tomato
+$C_71816D: #71816D;
+$C_742719 : #742719;
+$C_461108: #461108;
+$C_170805 : #170805;
+*/
 
 
 
