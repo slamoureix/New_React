@@ -9,9 +9,9 @@ import {
 
 import {Provider} from 'react-redux';
 
-import AnimReducer from './reducer/anim';
 import RoutesReducer from './reducer/routes';
 import TypographieReducer from './reducer/typographie';
+import GraphismeReducer from './reducer/graphisme';
 import UxUiReducer from './reducer/uxui';
 import DeveloppementReducer from './reducer/developpement';
 import DiversReducer from './reducer/divers';
@@ -24,10 +24,11 @@ const AllRoutesReducer = combineReducers({
     UxUiReducer,
     TypographieReducer,
     DeveloppementReducer, 
+    GraphismeReducer,
     DiversReducer,
     AdminReducer
 });
-const rootReducer = combineReducers({AnimReducer, AllRoutesReducer});
+const rootReducer = combineReducers({AllRoutesReducer});
 const GeneralStore = createStore(rootReducer);
 
 ReactDOM.render(

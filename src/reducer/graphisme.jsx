@@ -1,16 +1,15 @@
-import {
-    UnVoyageInterieurData
-} from '../pages/Divers/UnVoyageInterieur/data'
+import {portraitsDeLoireData} from '../pages/Graphisme/PortraitsDeLoire/data.js'
+
 
 export const GraphismeRoutes = {
     Graphisme: {
-        UnVoyageInterieur: {
-            path: UnVoyageInterieurData.routes.path,
-            name: UnVoyageInterieurData.name,
-            component: UnVoyageInterieurData.routes.component,
-            rep: UnVoyageInterieurData.rep,
-            typeofLink: UnVoyageInterieurData.routes.typeofLink,
-            cover: UnVoyageInterieurData.img.cover,
+        PortraitsDeLoire: {
+            path: portraitsDeLoireData.routes.path,
+            name: portraitsDeLoireData.name,
+            component: portraitsDeLoireData.routes.component,
+            rep: portraitsDeLoireData.rep,
+            typeofLink: portraitsDeLoireData.routes.typeofLink,
+            cover: portraitsDeLoireData.img.cover,
         },
     },
 }

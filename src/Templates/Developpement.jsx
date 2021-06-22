@@ -29,7 +29,8 @@ export default function DeveloppementTemplate({
 
                     <section> 
                     <ul className = {`${nameProject.rep}__images_row` }>
-                    {useCreateImageGrid(datasImgState, nameProject.rep)} {/*à voir en fonction du nombre d'image*/}
+                    {useCreateImageGrid(datasImgState, nameProject.rep)} 
+                    {/*à voir en fonction du nombre d'image*/}
                     </ul>
                     <ToSite toSite= {nameProject.adress}/>
                     </section>

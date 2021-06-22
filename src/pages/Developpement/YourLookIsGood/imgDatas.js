@@ -1,5 +1,5 @@
 import { cover } from './imgDatas/cover';
-// import {YligMockUp} from './imgDatas/yourLookIsGoodMockUp';
+
 
 import {
     web_presentation_mobile

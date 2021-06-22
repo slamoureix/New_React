@@ -1,8 +1,11 @@
 import React from 'react';
 
 export default function Contact() {
+    const ref = React.createRef()
     return (
-        <div className="Contact">
+        
+        <div className="Contact" ref={ref}>
+            
             <p className="Contact_content"> 
             Et si on discutait de votre projet ?
             <br/>

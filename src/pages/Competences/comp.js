@@ -14,7 +14,6 @@ import {
     integration,
     javascript,
     jsx,
-    photographie,
     photoshop,
     php,
     react,

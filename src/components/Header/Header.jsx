@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo';
 
 import { useLinksCreate } from '../../uselinksCreate';
 import { useSelector } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import {gsap} from 'gsap';
 
@@ -23,13 +23,16 @@ export default function Header() {
     const history = useHistory();
     const [locationState, setLocation] = useState(location);
     const home = <button ref={homeRef} style={{cursor:'pointer'}} onClick={() => history.push('/')} className="link link__home">Accueil</button>
-    const anchor = <a ref={anchorRef} className= "link" href= "#projet">Réalisations</a>
+    
+    const anchor = <a ref={anchorRef} className="link" href="#projet">Réalisations</a> /* verifications des ancres react */
     
 
-    useEffect(() => {
-        setLocation(location)}, [location])
+    useEffect(() => { setLocation(location)}, [location])
     useEffect(() => { gsap.fromTo(navMenu.current, {opacity:0,delay:0, duration:0 }, {opacity: 1, duration: .5, delay: 1})}, [])
-    useEffect(() => { if (locationState.pathname !== '/') homeRef.current.classList.add('animate') }, [locationState.pathname])
+    useEffect(() => { 
+        if (locationState.pathname !== '/') homeRef.current.classList.add('animate') 
+    
+    }, [locationState.pathname])
     
     return (
         <header className="header">

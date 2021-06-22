@@ -1,15 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import HomeSection from '../../Templates/HomeSection.jsx';
 
 // datas 
-import { default as nameProject } from './data.js';
+import { editionData as nameProject } from './data.js';
 
 //Components
 
 export default function Edition() {
     
-    return (
-        <article className= {`${nameProject.rep}__category_container`}>
-            
-        </article>
-    )
+    const GraphismeRoutes = useSelector(({AllRoutesReducer}) => ({
+        ...AllRoutesReducer.GraphismeReducer.Graphisme
+    }));
+    return <HomeSection nameProject={nameProject} routes={GraphismeRoutes} />
 }

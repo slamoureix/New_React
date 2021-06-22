@@ -4,13 +4,12 @@
 $EcartToRight: 14vw;
 
 .Contact {
-    @extend .height-content;
     display: flex;
-//    height: 80vh;
+    height: 80vh;
     align-items: center;
     
-
     &_content {
+        
         width: calc(100% - #{$EcartToRight});
         transform: translateX(#{$EcartToRight});
         font-family: $popins_black;

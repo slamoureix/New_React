@@ -18,12 +18,10 @@ export const CreatePicture = (rep, src_default, sources, alt) => {
     
 
     /* pour src_default */
-    const [SrcState, SrcSetstate] = useState();
-
-    CreateSrc(src_default.name, src_default.format, rep).then(value => (SrcSetstate(value.default)));
+    const [SrcState, SrcSetstate] = useState(null);
+    
     
     const fusionToArray = (InitSources, Temporary) => {
-        
     let CompletedSources = [];
     for (let index = 0; index < InitSources.length; index++) {
         
@@ -32,21 +30,22 @@ export const CreatePicture = (rep, src_default, sources, alt) => {
             'srcset': Temporary[index]
         })
     }
-
     setDataSourceState(DataSourceState => ({...DataSourceState, CompletedSources}));
     }
 
     useEffect(() => {
         const AllSources = (Sources) => {
-            
         // On vient map le tableau de data sources afin de créer pour chaque element un nouveau tableau avec les promesses.
         let importSources = Sources.map(element => CreateSrc(element.src.name, element.src.format, rep).then(v => v.default));
-    
         // Permet de ressoudre toutes les promesses dans l'Array de promesse.
         Promise.all(importSources).then(value => setTemorarySources(value)) // -> on ajoute le tableau au state Temporaire
         }
+
         temporaryImportSources ? fusionToArray(sources, temporaryImportSources) : AllSources(sources);
-        }, [rep, sources, temporaryImportSources])
+        
+        if (!SrcState) CreateSrc(src_default.name, src_default.format, rep).then(value => (SrcSetstate(value.default)));
+
+        }, [SrcState, rep, sources, temporaryImportSources])
 
     return (
         <picture>

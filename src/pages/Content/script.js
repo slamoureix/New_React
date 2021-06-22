@@ -7,12 +7,13 @@ export const AddHoverEffectOnLink = () => {
     const TypoArrLinks = Array.from(document.querySelectorAll(`#Typographie>${classes}`));
     const UxuiArrLinks = Array.from(document.querySelectorAll(`#UxUi>${classes}`));
     const DiversArrLinks = Array.from(document.querySelectorAll(`#Divers>${classes}`));
+    const EditionArrLinks = Array.from(document.querySelectorAll(`#Edition>${classes}`));
 
     //
     const AllLinks = [];
     let currentIndex = 0;
 
-    AllLinks.push(DevArrLinks, TypoArrLinks, UxuiArrLinks, DiversArrLinks)
+    AllLinks.push(DevArrLinks, TypoArrLinks, UxuiArrLinks, DiversArrLinks, EditionArrLinks)
 
     //
     AllLinks.forEach(Arr => {

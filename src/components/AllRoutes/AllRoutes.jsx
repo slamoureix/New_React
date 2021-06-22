@@ -8,8 +8,9 @@ import { easingMaterial, tl} from '../../scripts/gsap'
 export default function AllRoutes() {
     const loc = useLocation(null) /* Use Location permet de détécter l'url courant */
     const routeRef = useRef(null) /* UseRef permet de créer une ref à la cible de l'élément */
-
+    
     function CreateRoutes () {
+        console.log(loc)
     const ObjRoutes = useSelector(({AllRoutesReducer}) => ({...AllRoutesReducer})) /* on récupère l'ensemble des routes dans le reducer global */
     const ArrRoutes = [];
 
@@ -25,8 +26,11 @@ export default function AllRoutes() {
                             if (r.typeofLink !== "external") {
                                 ArrRoutes.push(
                                 <Route key={r.path} exact path={r.path}>
-                                <div className="transitComponent" ref={routeRef}>
-                                <r.component/>
+                                <div 
+                                className = "transitComponent"
+                                ref = {routeRef}>
+
+                                <r.component />
                                 </div>
                                 </Route>
                                 );}
@@ -36,31 +40,30 @@ export default function AllRoutes() {
         return ArrRoutes
     }
 
-    const onEnter = () =>{
-        tl.from(routeRef.current, {
-            y: -150,
-            opacity: 0,
-            delay: 0,
-            duration: 0,
-            ease: easingMaterial,
-        })
-        
+    const onEnter = (isAppering) =>{
+        if (isAppering) {
+            routeRef.current.removeAttribute("style");
+            console.log('false')}
+        if (!isAppering) {
+            console.log('true',!isAppering )
+            tl.from(routeRef.current, {
+                opacity: 0,
+                autoAlpha: 0,
+                delay: 0,
+                duration: .3,
+                ease: easingMaterial,
+            })
+        }
     }
     const onExit = () => {
-        tl.fromTo(routeRef.current, {
-            y: 150,
-            visibility: "hidden",
-            opacity: 0,
-            autoAlpha: 0,
-            delay: .2,
+        
+        tl.from(routeRef.current, {
+            y: 100,
+            x: -25,
+            skewX: 5,
+            duration: 1.25,
             ease: easingMaterial,
-        }, {
-            transform: 'none',
-            opacity: 1,
-            autoAlpha: 1
         })
-        
-        
     }
     const onEntered = () => {
         routeRef.current.removeAttribute("style");
@@ -69,24 +72,23 @@ export default function AllRoutes() {
         routeRef.current.removeAttribute("style");
     }
 
+
     return (
         <TransitionGroup 
             component={null} /* permet de créer un container engloblant  */
             >
-            
-
             <Transition
+            
             key={loc.key}
             nodeRef={routeRef} /* nodeRef > permet d'associer le composant cssTransition avec l'élement enfant */ 
             
-            timeout={{appear : 200, enter : 200, exit : 600}}
+            timeout = {{enter : 600, exit : 600}}
 
             onEnter={onEnter}
             onExit={onExit}
 
             onEntered={onEntered}
             onExited={onExited}
-            unmountOnExit
             > 
                 <Switch location={loc}>
                     {CreateRoutes()}
@@ -98,11 +100,9 @@ export default function AllRoutes() {
     )
 }
 
-// classNames= 'fade' /* classNames > permet d'associer une class générique pour appliquer les transitions Css */
-
+// classNames= '******* /* classNames > permet d'associer une class générique pour appliquer les transitions Css */
 /* 
 ORDER >
-
 onEnter = {onEnter}     Transition lancé immédiatement après l’application de la classe 'enter' ou 'appear'
 onEntering = {}         Transition lancé immédiatement après l’application de la classe 'enter-active' ou 'appear-active'.
 onEntered={onEntered}   Transition lancé immédiatement après la suppression des classes 'enter' ou 'appear' et l’ajout de la classe done au nœud DOM

@@ -21,7 +21,7 @@ export default function About() {
         .from(presentation.current, {
             y: 50,
             opacity: 0,
-            duration: .8,
+            duration: .5,
             ease: easingMaterial,
             delay: .3
         })
@@ -43,7 +43,6 @@ export default function About() {
                         Passionné par <strong> le design graphique</strong>, <strong>l'édition</strong>,<br/> 
                         <strong>la création web </strong> et <strong>le développement front&#8209;end</strong><br/>
                         je suis <span><strong>Indépendant</strong></span> depuis <span className="date">2016</span>. 
-                        
                     </p>
                 <span className="separate" />
             </div>
