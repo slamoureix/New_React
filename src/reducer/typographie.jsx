@@ -2,7 +2,7 @@ import {letterData} from '../pages/Typographie/Letter/data';
 import {wordsData} from '../pages/Typographie/Words/data';
 import {numberData} from '../pages/Typographie/Number/data';
 
-export const TypoRoutes = {
+export const typoRoutes = {
     Typographie: {
         Letter: {
             path: letterData.routes.path,
@@ -32,6 +32,6 @@ export const TypoRoutes = {
 }
 
 
-export default function RoutesReducer(state = TypoRoutes) {
+export default function RoutesReducer(state = typoRoutes) {
     return state;
 }

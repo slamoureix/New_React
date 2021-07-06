@@ -75,6 +75,7 @@ export const photoshop= "Photoshop"
 export const adobeXd= "Adobe XD"
 export const figma= "Figma"
 
+export const ReCaptchaKey = "6LcgJWcbAAAAACVvo5M3GM1XsEWksF9meCtc6n4T"
 
 /* colors */
 /*

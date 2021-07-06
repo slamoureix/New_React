@@ -32,20 +32,21 @@ export const CreatePicture = (rep, src_default, sources, alt) => {
     }
     setDataSourceState(DataSourceState => ({...DataSourceState, CompletedSources}));
     }
+    
 
     useEffect(() => {
         const AllSources = (Sources) => {
-        // On vient map le tableau de data sources afin de créer pour chaque element un nouveau tableau avec les promesses.
-        let importSources = Sources.map(element => CreateSrc(element.src.name, element.src.format, rep).then(v => v.default));
-        // Permet de ressoudre toutes les promesses dans l'Array de promesse.
-        Promise.all(importSources).then(value => setTemorarySources(value)) // -> on ajoute le tableau au state Temporaire
+            // On vient map le tableau de data sources afin de créer pour chaque element un nouveau tableau avec les promesses.
+            let importSources = Sources.map(element => CreateSrc(element.src.name, element.src.format, rep).then(v => v.default));
+            // Permet de ressoudre toutes les promesses dans l'Array de promesse.
+            Promise.all(importSources).then(value => setTemorarySources(value)) // -> on ajoute le tableau au state Temporaire
         }
 
         temporaryImportSources ? fusionToArray(sources, temporaryImportSources) : AllSources(sources);
         
         if (!SrcState) CreateSrc(src_default.name, src_default.format, rep).then(value => (SrcSetstate(value.default)));
 
-        }, [SrcState, rep, sources, temporaryImportSources])
+        }, [SrcState, rep, sources, src_default.format, src_default.name, temporaryImportSources])
 
     return (
         <picture>

@@ -23,10 +23,3 @@
     visibility: visible;
 }
 
-@keyframes ToScaleTransition{
-    100%{
-        border-radius: 50%;
-        display: none;
-        transform: scale(0);
-    }
-}

@@ -18,7 +18,7 @@ html {
 
     scroll-behavior: smooth;
 
-    // personne qui on des soucis de motricité
+    // // personne qui on des soucis de motricité
     @media (prefers-reduced-motion: reduce) {
         scroll-behavior: auto;
     }
@@ -36,6 +36,7 @@ html {
     }
     
     body{
+        // hyphens: manual; // peremet de faire des césures manuelles si possible avec les caractères &shy; (si possible) et sinon &hyphen;(obligatoire)
         background-color: inherit; // couleur de l'élément pour le contexte d'empilement //
     }
 

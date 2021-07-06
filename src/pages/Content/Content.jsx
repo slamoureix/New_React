@@ -1,24 +1,34 @@
-import React, { useEffect} from 'react'
+import {useEffect} from 'react'
 
-import Typographie from '../Typographie/Typographie'
-import Developement from '../Developpement/Developpement'
-import UxUi from '../UxUi/UxUi'
-import Edition from '../Graphisme/Edition'
-import Divers from '../Divers/Divers'
+import {
+    AddHoverEffectOnLink,
+    ScrollEffectTranslation
+} from './script'
 
-import {AddHoverEffectOnLink} from './script'
+import { useSelector } from 'react-redux'
+import TemplateHomeSection from './templateHomeSection'
 
 export default function Content() {
-    useEffect(() => {AddHoverEffectOnLink()}, [])
+    const Project = useSelector(({HomeProject}) => ({HomeProject}));
+
+    useEffect(()=>{
+        AddHoverEffectOnLink()
+        ScrollEffectTranslation()
+    }, [])
+
     return (
         <article id="projet">
             <header><h1>Réalisations</h1></header>
-            <Developement/> 
-            <UxUi/>
-            <Typographie/> 
-            <Edition/>
-            <Divers/>
+            {
+            Project.HomeProject.map((e, index) => {
+            return <TemplateHomeSection key={index} index={index} nameProject={e[0]} routes={e[1]} />
+            })}
         </article>
     )
 }
+
+
+
+
+
 

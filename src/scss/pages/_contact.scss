@@ -1,26 +1,202 @@
 @use '../abstracts/variables'as *;
-@use '../abstracts/extend'as*;
+@use '../mixins/col'as*;
 
 $EcartToRight: 14vw;
+$borderInput : 5px solid $C_E84E32 ;
 
-.Contact {
-    display: flex;
-    height: 80vh;
-    align-items: center;
-    
-    &_content {
+.Contact_content {
+        @extend .col-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-3,
+        .col-xl-3,
+        .col-xxl-3;
         
-        width: calc(100% - #{$EcartToRight});
-        transform: translateX(#{$EcartToRight});
-        font-family: $popins_black;
-        font-size: clamp(3rem, 5.556vw, 8rem);
-        line-height: clamp(4.5rem, 4.167vw, 6rem);
+        p:first-of-type {
+            font-family: $popins_black;
+            font-size: clamp(3rem, 5.556vw, 8rem);
+            line-height: clamp(3rem, 5.556vw, 8rem);
+        }
 
-        span {
-            position: relative;
-            font-family: $popins_bold;
-            font-size: clamp(1.9rem, 2.778vw, 4rem);
-            line-height: 1.5rem;
+        p:nth-of-type(2){
+            color: $C_742719;
+            font-family: $popins--italic;
+            font-size: 1.5rem;
         }
     }
+
+.form {
+    &_box{
+        @extend .col-6,
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-3,
+    .col-xl-3,
+    .col-xxl-3;
+    }
+
+    &_content{
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(1.5rem, 1.389vw, 2rem);
+
+        button {
+            align-self: flex-end;
+            width: auto;
+            
+            p{
+                padding: 10px;
+                font-size: clamp(1.5rem, 1.389vw, 2rem);
+                font-family: $popins_bold;
+                border: 2px solid $C_E84E32;
+            }
+
+            
+
+            &:hover{
+                transition: .3s all $ease-material;
+                transform: translateX(-10px) skew(-10deg);
+                box-shadow: 10px 10px $C_E84E32;
+            }
+        }
+    }
+
+    &_box_item{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding-left: 10px;
+        margin-bottom: 25px;
+        border-left: $borderInput;
+        border-bottom: $borderInput;
+        
+        label {
+            display: block;
+            font-family: $popins_bold;
+            margin-bottom: 10px;
+        }
+        
+        :is(textarea, input) {
+            color: $C_E84E32;
+            font-family: $popins_regular;
+        }
+
+        &:nth-of-type(5){
+            flex-direction: row;
+            align-items: center;
+            border: none;
+            padding-left: 0;
+            justify-content: space-between;
+            font-size: clamp(1rem, .90vw, 1.3rem);
+            line-height: clamp(1.2rem, 1.389vw, 1.6rem);
+
+            label{
+                hyphens: auto;
+                text-align: justify;
+                margin-bottom: 0;
+                font-family: $popins_regular;
+                }
+        }
+
+        .emailError {
+            align-self: flex-end;
+            padding: 10px;
+            border-top: $borderInput;
+            border-right: $borderInput;
+            font-family: $popins--italic;
+            font-size: clamp(1rem, .90vw, 1.3rem);
+            position: absolute;
+            right: 0;
+            top:-10px;
+            text-align: right;
+            width: 50%;
+            transition: all .3s linear;
+        }
+
+        textarea{
+            resize: none;
+            scrollbar-width: thin;
+        }
+
+
+        input:not(input[type=checkbox]), textarea{
+            caret-color: $C_E84E32;
+            height: auto;
+            width: 100%;
+            border-right: 2px dotted $Bg;
+            border-top: 2px dotted $Bg;
+            padding: 5px 0;
+
+            &:focus {
+                border-right-color: $C_E84E32;
+                border-top-color: $C_E84E32;
+                box-shadow: 10px 10px $C_E84E32;
+                transform: skew(-10deg);
+                transition: .3s all linear;
+            }
+        }
+        
+        input[type=checkbox]{
+            -webkit-appearance:none;
+            -moz-appearance: none;
+            -ms-appearance:none;
+
+            flex-shrink: 0;
+            margin-right: 20px;
+            box-sizing: content-box;
+            
+            height: 20px;
+            width: 20px;
+            border: 4px solid $C_E84E32;
+            position: relative;
+
+            &:focus {
+                transition: .3s all linear;
+                transform: skew(-4deg);
+                box-shadow: 4px 4px $C_E84E32;
+            }
+            
+
+            &::before, &::after {
+                content: '';
+                width: 20px;
+                height: 3px;
+                position: absolute;
+                background-color: $C_E84E32;
+                top: calc(50% - 1.5px);
+            }
+            &::before{
+                transform: scaleY(0) rotate(45deg);
+            }
+            &::after{
+                transform: scaleY(0) rotate(-45deg);
+            }
+
+            &:checked{
+                transition: .3s all linear;
+
+                &:focus{
+                    box-shadow: none;
+                }
+
+                    &::before,
+                    &::after {
+                        transition: .3s all $ease-material;
+                    }
+
+                    &::before {
+                        transform: scaleY(1) rotate(45deg) skew(50deg);
+                        transition-delay: .1s;
+                    }
+
+                    &::after {
+                        transform: scaleY(1) rotate(-45deg) skew(-50deg);
+                        transition-delay: .1s;
+                    }
+            }
+        }
+    }
+
+    
 }
+

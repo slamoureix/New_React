@@ -1,11 +1,16 @@
-import React, {} from 'react'
-import { devFront } from '../../config'
+import React, { useEffect } from 'react'
 
 import useForInContent from '../../useForInContent'
 import useMapContent from '../../useMapContent'
 import { competences } from './comp'
 
 export default function Competences() {
+    
+    
+    
+    useEffect(() => {
+        
+    }, [])
     return (
             <article className="competence__project_container">
                 <section>
@@ -32,7 +37,7 @@ export default function Competences() {
                         <p className= "comp_content">
                         De l'idée à la réalisation les étapes sont longues... <br/>
                         Pour vous aider dans ce chemin mes expériences et mes compétences sont à votre disposition. <br/>
-                        Elles me permettent de prendre part à un large éventail de projet et d'intervenir durant toutes les différentes étapes d'un projet.
+                        Elles me permettent de prendre part à un large éventail de projet et d'intervenir durant toutes les étapes d'un projet.
                     </p>
                         <ul className="comp_boxes">
                             <li className="comp_box">

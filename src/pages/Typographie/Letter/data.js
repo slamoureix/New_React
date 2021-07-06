@@ -23,7 +23,7 @@ export const letterData = {
     },
     "name": "Letter",
     "type": typographie,
-    "content": "",
+    "content": "Les lettres font partie de notre quotidien sans que nous nous en rendons compte, elles sont ici et là font partie de l'Homme. J'ai voulu rendre hommage à la lettre en tant que forme, en tant que symbole fort tout en gardant à l'esprit quelles puissent être reconnaissable.",
     "outils": "illustrator - photoshop",
     "rep": "Letter",
     "img": {

@@ -7,6 +7,7 @@ import Nav from '../../../components/Navigation/Navigation';
 import { numberData as nameProject } from './data';
 
 import useCreateImageGrid from '../../../useCreateImageGrid';
+import Content from '../../../components/TemplateComponent/Content';
 
 export default function Letter() {
     const [DatasImgState] = useState(nameProject.img.content);
@@ -21,8 +22,9 @@ export default function Letter() {
             <div className="head_row">
                 <div className= "title"><h1>{nameProject.name}</h1></div>
             </div>
+            <Content nameProjectProps = {nameProject}/>
             </section>
-            <section className= {`${nameProject.name}__grid`}>{useCreateImageGrid(DatasImgState, nameProject.name)}</section>
+            <section className= {`${nameProject.name}__grid`}>{useCreateImageGrid(DatasImgState, nameProject.rep)}</section>
             <Nav rep= {nameProject.rep} routes= {TypographieRoutes}/>
         </article>
     )

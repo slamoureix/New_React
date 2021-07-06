@@ -1,4 +1,3 @@
-import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import './App.scss';
 
@@ -11,9 +10,8 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import AllRoutes from './components/AllRoutes/AllRoutes';
 
 export default function App() {
-    
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop/> {/* composant qui gère le scroll vers le top */ }
       <Cursor/> 
         <Header/>

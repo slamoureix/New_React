@@ -16,7 +16,7 @@ export const numberData = {
         "typeofLink": project,
         "component" : Number
     },
-    
+    "content":"Recherche graphique sur les nombres, concept permettant d'évaluer des quantités. Le parti-pris est ici d'utiliser des formes géometriques simples pleines ou filiformes et une grille de dimension variable.",
     "name": "Number",
     "type": typographie,
     "rep": "Number",

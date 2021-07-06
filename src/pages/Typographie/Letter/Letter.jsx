@@ -6,6 +6,7 @@ import Nav from '../../../components/Navigation/Navigation';
 import { letterData as nameProject } from './data';
 
 import CreateImageGrid from '../../../useCreateImageGrid.jsx';
+import Content from '../../../components/TemplateComponent/Content';
 
 
 export default function Letter() {
@@ -21,6 +22,7 @@ export default function Letter() {
                 <div className="head_row">
                 <div className= "title"><h1>{nameProject.name}</h1></div>
                 </div>
+                <Content nameProjectProps = {nameProject}/>
             </section>
 
             <section className= {`${nameProject.name}__grid`}>

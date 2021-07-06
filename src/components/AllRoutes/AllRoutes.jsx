@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import {useRef, useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { Route, Switch, useLocation } from 'react-router'
 import { Transition, TransitionGroup } from 'react-transition-group'
@@ -10,7 +10,6 @@ export default function AllRoutes() {
     const routeRef = useRef(null) /* UseRef permet de créer une ref à la cible de l'élément */
     
     function CreateRoutes () {
-        console.log(loc)
     const ObjRoutes = useSelector(({AllRoutesReducer}) => ({...AllRoutesReducer})) /* on récupère l'ensemble des routes dans le reducer global */
     const ArrRoutes = [];
 
@@ -28,6 +27,7 @@ export default function AllRoutes() {
                                 <Route key={r.path} exact path={r.path}>
                                 <div 
                                 className = "transitComponent"
+                                style ={{visibility:'hidden'}}
                                 ref = {routeRef}>
 
                                 <r.component />
@@ -41,26 +41,23 @@ export default function AllRoutes() {
     }
 
     const onEnter = (isAppering) =>{
-        if (isAppering) {
-            routeRef.current.removeAttribute("style");
-            console.log('false')}
         if (!isAppering) {
-            console.log('true',!isAppering )
             tl.from(routeRef.current, {
                 opacity: 0,
-                autoAlpha: 0,
-                delay: 0,
-                duration: .3,
+                y: -100,
+                x: 25,
+                skewX :-10,
+                duration: '500ms',
                 ease: easingMaterial,
             })
         }
     }
     const onExit = () => {
-        
         tl.from(routeRef.current, {
-            y: 100,
+            opacity :0,
+            y: 150,
             x: -25,
-            skewX: 5,
+            skewX: 10,
             duration: 1.25,
             ease: easingMaterial,
         })
@@ -71,18 +68,26 @@ export default function AllRoutes() {
     const onExited = () => {
         routeRef.current.removeAttribute("style");
     }
-
+    useEffect(() => {
+        tl.to(routeRef.current, {
+            visibility: "visible",
+            delay: 0,
+            duration: '600ms'
+        })
+    }, [])
 
     return (
         <TransitionGroup 
             component={null} /* permet de créer un container engloblant  */
             >
             <Transition
-            
+            mountOnEnter
+            unmountOnExit
+
             key={loc.key}
             nodeRef={routeRef} /* nodeRef > permet d'associer le composant cssTransition avec l'élement enfant */ 
             
-            timeout = {{enter : 600, exit : 600}}
+            timeout = {{enter : 300, exit : 600}}
 
             onEnter={onEnter}
             onExit={onExit}

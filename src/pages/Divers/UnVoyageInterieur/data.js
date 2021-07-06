@@ -22,7 +22,7 @@ export const UnVoyageInterieurData = {
     },
     name: "Un voyage intérieur",
     type: art,
-    content: 'Un voyage intérieur est une installation réalisée dans le cadre de l\'exposition Totem, organisée par l\'association le Tube à la carrosserie HH Service à Strasbourg le 13 Mai 2017. 12 cyanotypes et un texte poétique écrit lors "d\'état second".',
+    content: 'Installation réalisée dans le cadre de l\'exposition Totem, organisée par l\'association le Tube à la carrosserie HH Service à Strasbourg le 13 Mai 2017. 12 cyanotypes et un texte poétique écrit lors "d\'état second".',
     texte: TextPoetique,
     competence: {
         title: comp,

@@ -1,7 +1,6 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
 import {
     createStore,
     combineReducers
@@ -10,6 +9,7 @@ import {
 import {Provider} from 'react-redux';
 
 import RoutesReducer from './reducer/routes';
+import HomeProject from './reducer/homeProject';
 import TypographieReducer from './reducer/typographie';
 import GraphismeReducer from './reducer/graphisme';
 import UxUiReducer from './reducer/uxui';
@@ -28,7 +28,7 @@ const AllRoutesReducer = combineReducers({
     DiversReducer,
     AdminReducer
 });
-const rootReducer = combineReducers({AllRoutesReducer});
+const rootReducer = combineReducers({AllRoutesReducer, HomeProject});
 const GeneralStore = createStore(rootReducer);
 
 ReactDOM.render(

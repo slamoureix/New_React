@@ -9,14 +9,11 @@ export function useLinksCreate(ArrLinks) {
         let L = ArrLinks[name];
         let link = 
         <Links 
-
-        key = {L.name}
+        key ={L.path}
         path={L.path} 
         name={L.name} 
         type={L.type}
         typeofLink = {L.typeofLink}
-        
-
         target={L.target} 
         anchor={L.anchor} 
 

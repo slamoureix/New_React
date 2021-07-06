@@ -1,12 +1,9 @@
-import React from 'react'
+import { useLinksCreate } from '../../uselinksCreate'
 
-import { useLinksCreate } from '../uselinksCreate'
-
-
-export default function HomeSection({nameProject, routes}) {
-    
+export default function TemplateHomeSection({nameProject, routes}){
     return (
-        <section className= {`${nameProject.rep}__category_container`}>
+        <section 
+        className= {`${nameProject.rep}__category_container scroll`}>
             <div className= {`${nameProject.rep}__category_presentation`}>
                 <h1>{nameProject.name}</h1>
             </div>
@@ -16,3 +13,4 @@ export default function HomeSection({nameProject, routes}) {
         </section>
     )
 }
+

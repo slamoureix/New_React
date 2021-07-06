@@ -132,3 +132,33 @@
 //         /article>
 //     )
 // }
+
+
+
+    /* <Developement ref={devRef} />  */
+    /* <UxUi/>
+    <Typographie/> 
+    <Edition/>
+    <Divers/> */
+
+
+    /*
+    gsapCore.fromTo(devRef.current, {
+        x: -450,
+        skewX: 25,
+    }, {
+        x: 50,
+        skewX: 0,
+        duration: .25,
+        ease: easingMaterial,
+        scrollTrigger: {
+            trigger: devRef.current,
+            markers: true,
+            start: "-75% center",
+            end: "-25% center",
+            scrub: true,
+            /* permet le retour en arrière de l'animation au scroll */
+    /*
+        }
+    })
+    */
