@@ -1,5 +1,6 @@
 import Error from '../pages/404/Error404';
 
+
 export const AdminRoutes = {
 Admin: {
     Error: {

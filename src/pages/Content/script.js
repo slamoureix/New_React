@@ -48,21 +48,24 @@ export const ScrollEffectTranslation = () => {
         gsapCore.fromTo(`.${selectedClass}`, {
             opacity:0,
             y: -50,
-            x: -450,
-            skewX: 25,
+            x: -500,
+            scale: .5,
+            skewX: 50,
         }, {
             opacity:1,
             x: 0,
             y: 0,
+            scale: 1,
             skewX: 0,
             duration: .5,
             ease: easingMaterial,
             scrollTrigger: {
                 trigger: `.${selectedClass}`,
                 markers: false,
-                start: "-75% center",
-                end: "-25% center",
-                scrub: true, /* permet le retour en arrière de l'animation au scroll revese*/
+                start: "-175% center",
+                end: "-125% center",
+                once: true, /* true > permet le retour en arrière de l'animation au scroll revese*/
+                scrub: .85, 
             }
         })
     }

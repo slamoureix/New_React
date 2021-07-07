@@ -10,6 +10,8 @@ export default function About() {
     const presentation = useRef(null)
     
     useEffect(() => {
+        
+        /* Animation GSAP */
         tl.to(me.current, {visibility: "visible", delay: 0, duration: 0 })
         .from(img.current, {
             y: 50,
@@ -26,7 +28,6 @@ export default function About() {
             delay: .3
         })
         .fromTo(".separate", {opacity: 0, scale: 0, x: -250, duration: 1, ease: easingMaterial,},{scale: 1, opacity: 1, rotate: 360, x: 0})
-        
     },[])
     
 

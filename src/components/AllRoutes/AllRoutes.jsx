@@ -69,6 +69,8 @@ export default function AllRoutes() {
         routeRef.current.removeAttribute("style");
     }
     useEffect(() => {
+        console.log(loc)
+
         tl.to(routeRef.current, {
             visibility: "visible",
             delay: 0,

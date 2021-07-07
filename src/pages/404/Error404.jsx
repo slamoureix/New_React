@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 export default function Error_404() {
     const {pathname} = useLocation();
 
-
     return (
         <div className="Box error404">
             <div className="box_404">
@@ -27,9 +26,9 @@ export default function Error_404() {
                 </div>
             </div>
             <div className="content">
-                <p>Oups ! la page {pathname} est partie dans les limbes des internets...</p>
-                <p>Revenir à l'accueil <br></br>
-                <span></span> <Link className="link" to="/">Home</Link>
+                <p>Oups&#8239;! la page {pathname} est partie dans les limbes des internets...</p>
+                <p>Revenir à l'accueil<br/>
+                <span/><Link className="link" to="/">Home</Link>
                 </p>
             </div>
         </div>

@@ -38,7 +38,4 @@ export const competences = {
     design: ['Direction artistique', edition, typographie, webdesign, ui, 'Charte graphique', branding],
     imprimerie: ['Chaine Graphique','Prépresse', 'Finition','Reliure'],
     logiciel: [indesign, illustrator, photoshop, adobeXd, figma],
-
-    
-
 }

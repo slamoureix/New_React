@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import useForInContent from '../../useForInContent'
 import useMapContent from '../../useMapContent'
 import { competences } from './comp'
 
 export default function Competences() {
-    
+    const history = useHistory()
     
     
     useEffect(() => {
@@ -84,30 +85,9 @@ export default function Competences() {
                 </section>
                 <div className="competence_row">
                     <p className="comp_contact"> 
-                    Un projet, un devis, une collab ou juste pour échanger des mots doux&#8239;?
-                    <br/>
-                    c.&#8239;&gt;&nbsp;<a className="link" href ="mailto:lamoureixs@gmail.com">lamoureixs@gmail.com</a>
+                    Un projet, un devis, une collab ou juste pour échanger quelques mots&#8239;?<br/>
+                    <button onClick={() => history.push('/Contact')} className="link" style={{cursor: "pointer"}}>Contactez-moi</button>
                     </p>
                 </div>
             </article>)
 }
-
-
-
-
-
-
-
-/*
- 
-Les sites que nous concevons pour vous sont faits sur mesure et à votre image.
-Nous nous assurons de leur bon fonctionnement sur mobile, tablette et ordinateur, 
-ainsi que sur une large gamme de navigateurs.Statiques ou administrables, 
-tous nos sites sont fondés sur les bonnes pratiques du référencement naturel.
-Mais aussi sur les enjeux de l’ expérience utilisateur et du temps de chargement.
-Qu’ il s’ agisse de développement mobile - first, thèmes WordPress sur mesure, sites HTML statiques ou encore e - commerces, 
-nous adaptons les techniques et supports à vos besoins et sommes toujours à l’ affut d’ expérimenter de nouvelles technologies.
-*/
-
-
-
